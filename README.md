@@ -15,8 +15,8 @@ training data = 63000, validation data = 7000, testing data = 30000, batch size 
 ![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/result_MSG.PNG)
 
 ### Experiments
-#### Experiment-1
-#### ---change training, validation, testing data size, training epoch
+### Experiment-1
+#### change training, validation, testing data size, training epoch
 Fixed HIDDEN_SIZE = 128, BATCH_SIZE = 128, the data size of the first and second groups is 80,000, the data size of the 3rd, 4th, and 5th groups is 100000, in the 4th group training data = 63000, validation data = 7000, The best performance is when testing data = 30000. In the fifth group, because the size of the training data increased, the effect of training became bad and the accuracy also became bad.
 
 ![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/experiment-1_grid.PNG)
@@ -25,16 +25,41 @@ Fixed HIDDEN_SIZE = 128, BATCH_SIZE = 128, the data size of the first and second
 #### Group4 model accuracy and loss
 ![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/group-4.PNG)
 
-#### Experiment-2
-#### --- Tune batch size
+### Experiment-2
+#### Tune batch size
 Training data size = 63000, Validation data size = 7000, Testing data size = 30000, training epoch = 80, hidden size = 128
 1. batch size = 64
 2. batch size = 128
 3. batch size = 256
-It can be seen from the experiment that when the batch size is 64, the performace is higher than the other two, and it tends to converge faster, and the loss also drops faster
+The batch size is 64, the performace is higher than the other two, and it tends to converge faster, and the loss also drops faster
 
-#### --- accuracy in different batch size
+#### accuracy in different batch size
 ![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/tune_batch_size.PNG)
 
 #### --- MSG prediction result
 ![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/batch_MSG_result.PNG)
+
+### Experiment - 3
+#### Tune hidden size
+Training data size = 63000, Validation data size = 7000, Testing data size = 30000, training epoch = 80, batch size = 128
+1. hidden size = 64
+2. hidden size = 128
+3. hidden size = 256
+A larger hidden size tends to converge faster, and the loss will drop faster.
+#### accuracy in different hidden size
+![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/tune_hidden_size.PNG)
+
+#### --- MSG prediction result
+![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/hidden_MSG_result.PNG)
+
+#### Combine adder and subtractor together
+label length = 13 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, +, -, ‘’],
+Training data size = 99000, Validation data size = 11000, Testing data size = 90000, Epoch = 35, batch size = 128, hidden size = 128
+
+Using this method to combine the adder and the subtractor to make the result is not bad, MSG prediction is about 0.93678
+
+![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/adder_subtractor_MSG.PNG)
+
+![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/adder_subtractor_result.PNG)
+
+
