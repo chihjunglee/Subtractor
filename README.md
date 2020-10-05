@@ -35,3 +35,6 @@ It can be seen from the experiment that when the batch size is 64, the performac
 
 #### --- accuracy in different batch size
 ![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/tune_batch_size.PNG)
+
+#### --- MSG prediction result
+![image](https://github.com/ElmoLee822/Subtractor/blob/master/img/batch_MSG_result.PNG)
